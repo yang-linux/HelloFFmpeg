@@ -38,8 +38,6 @@ public class HelloFFmpegActivity extends AppCompatActivity {
         });
 
         // Example of a call to a native method
-        //TextView tv = (TextView) findViewById(R.id.sample_text);
-        //tv.setText(stringFromJNI());
         final HelloFFmpegLibrary helloFFmpegLibrary = new HelloFFmpegLibrary();
         final TextView ffmpegcfg = (TextView) findViewById(R.id.ffmpeg_cfg);
         final Button button = (Button) findViewById(R.id.ffmpeg_button);
@@ -72,10 +70,4 @@ public class HelloFFmpegActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
 }
