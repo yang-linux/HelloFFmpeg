@@ -1,6 +1,7 @@
 package com.yxj.helloffmpeg;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,11 +11,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.yxj.helloffmpeglibrary.HelloFFmpegLibrary;
+
 public class HelloFFmpegActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
     static {
-        System.loadLibrary("native-lib");
+        //System.loadLibrary("native-lib");
+        System.loadLibrary("HelloFFmpegCfg");
     }
 
     @Override
@@ -34,8 +38,17 @@ public class HelloFFmpegActivity extends AppCompatActivity {
         });
 
         // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        //TextView tv = (TextView) findViewById(R.id.sample_text);
+        //tv.setText(stringFromJNI());
+        final HelloFFmpegLibrary helloFFmpegLibrary = new HelloFFmpegLibrary();
+        final TextView ffmpegcfg = (TextView) findViewById(R.id.ffmpeg_cfg);
+        final Button button = (Button) findViewById(R.id.ffmpeg_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegConfiguration());
+            }
+        });
     }
 
     @Override
