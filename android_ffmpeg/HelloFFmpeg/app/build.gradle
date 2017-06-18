@@ -15,12 +15,19 @@ android {
                 cppFlags ""
             }
         }
+        ndk {
+            //这里我们只有armeabi就只配置这个就行了
+            abiFilters  'armeabi'
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    sourceSets.main {
+        jniLibs.srcDirs = ['src/main/jniLibs']
     }
     externalNativeBuild {
         cmake {
