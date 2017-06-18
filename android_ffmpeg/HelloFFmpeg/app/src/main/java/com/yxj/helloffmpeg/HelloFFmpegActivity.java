@@ -15,7 +15,8 @@ import com.yxj.helloffmpeglibrary.HelloFFmpegLibrary;
 
 public class HelloFFmpegActivity extends AppCompatActivity {
 
-    // Used to load the 'native-lib' library on application startup.
+    private Button button = null;
+    private TextView ffmpegcfg = null;
     static {
         //System.loadLibrary("native-lib");
         System.loadLibrary("HelloFFmpegCfg");
@@ -46,12 +47,44 @@ public class HelloFFmpegActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         final HelloFFmpegLibrary helloFFmpegLibrary = new HelloFFmpegLibrary();
-        final TextView ffmpegcfg = (TextView) findViewById(R.id.ffmpeg_cfg);
-        final Button button = (Button) findViewById(R.id.ffmpeg_button);
+        ffmpegcfg = (TextView) findViewById(R.id.ffmpeg_info);
+        button = (Button) findViewById(R.id.Configuration);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegConfiguration());
+                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegInfo(1));
+            }
+        });
+
+        button = (Button) findViewById(R.id.Protocol);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegInfo(2));
+            }
+        });
+
+        button = (Button) findViewById(R.id.Format);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegInfo(3));
+            }
+        });
+
+        button = (Button) findViewById(R.id.Filter);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegInfo(4));
+            }
+        });
+
+        button = (Button) findViewById(R.id.Codec);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                ffmpegcfg.setText(helloFFmpegLibrary.showFFmpegInfo(5));
             }
         });
     }

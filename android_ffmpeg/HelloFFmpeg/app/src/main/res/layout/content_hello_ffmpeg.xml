@@ -1,28 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.yxj.helloffmpeg.HelloFFmpegActivity"
     tools:showIn="@layout/activity_hello_ffmpeg">
 
-    <TextView
-        android:id="@+id/sample_text"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HelloFFmpeg" />
-    <Button
-        android:id="@+id/ffmpeg_button"
-        android:text="@string/ffmpeg_config"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/ffmpeg_cfg"
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:src="@android:drawable/sym_def_app_icon"
+        android:id="@+id/HelloFFmpeg"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/Author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/HelloFFmpeg"
+        android:text="Yangxuejian" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Author"
+        android:layout_toEndOf="@+id/HelloFFmpeg"
+        android:text="Beijing" />
+
+    <TextView
+        android:id="@+id/NetAddr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Address"
+        android:layout_toEndOf="@+id/HelloFFmpeg"
+        android:text="https://github.com/yang-linux/android.git" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/HelloFFmpeg"
+        android:text="Configuration"
+        android:id="@+id/Configuration"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Configuration"
+        android:layout_toRightOf="@+id/Configuration"
+        android:id="@+id/Protocol"
+        android:text="Protocol"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Protocol"
+        android:layout_toRightOf="@+id/Protocol"
+        android:id="@+id/Codec"
+        android:text="Codec"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Codec"
+        android:layout_toRightOf="@+id/Codec"
+        android:id="@+id/Filter"
+        android:text="Filter"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Configuration"
+        android:id="@+id/Format"
+        android:text="Format"
+        android:textAllCaps="false"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Format"
+        android:id="@+id/ffmpeg_info"
+        android:text="yangxuejian"/>
+
+</RelativeLayout>

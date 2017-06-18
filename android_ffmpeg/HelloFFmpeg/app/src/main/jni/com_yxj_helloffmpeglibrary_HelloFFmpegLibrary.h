@@ -9,11 +9,11 @@ extern "C" {
 #endif
 /*
  * Class:     com_yxj_helloffmpeglibrary_HelloFFmpegLibrary
- * Method:    showFFmpegConfiguration
- * Signature: ()Ljava/lang/String;
+ * Method:    showFFmpegInfo
+ * Signature: (I)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_yxj_helloffmpeglibrary_HelloFFmpegLibrary_showFFmpegConfiguration
-  (JNIEnv *, jobject);
+JNIEXPORT jstring JNICALL Java_com_yxj_helloffmpeglibrary_HelloFFmpegLibrary_showFFmpegInfo
+  (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
 }
