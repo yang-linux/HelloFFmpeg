@@ -4,15 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.yxj.dragimage.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <HorizontalScrollView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/id_ImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher"/>
+    </FrameLayout>
+    <com.yxj.dragimage.MyHorizontalScrollView
+        android:id="@+id/id_MyHorizontalScrollView"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_gravity="center_vertical"
-        android:background="#AA444444"
+        android:layout_gravity="bottom"
+        android:background="@color/myWhite"
         android:scrollbars="none" >
 
         <LinearLayout
@@ -22,6 +38,6 @@
             android:layout_gravity="center_vertical"
             android:orientation="horizontal" >
         </LinearLayout>
-    </HorizontalScrollView>
+    </com.yxj.dragimage.MyHorizontalScrollView>
 
 </LinearLayout>
